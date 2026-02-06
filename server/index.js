@@ -30,7 +30,7 @@ app.use(express.json({ limit: '50mb' })); // Allow large payloads for Base64 ima
 const PORT = process.env.PORT || 3000;
 
 // Database Connection Pool
-const pool = mysql.createPool({
+const dbConfig = {
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
@@ -38,7 +38,16 @@ const pool = mysql.createPool({
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
-});
+};
+
+// Enable SSL for TiDB Cloud (required for serverless)
+if (process.env.DB_SSL === 'true' || process.env.NODE_ENV === 'production') {
+    dbConfig.ssl = {
+        rejectUnauthorized: true
+    };
+}
+
+const pool = mysql.createPool(dbConfig);
 
 // Test DB Connection
 pool.getConnection()
