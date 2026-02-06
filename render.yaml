@@ -1,0 +1,24 @@
+# Render.com deployment configuration
+# This file tells Render how to build and deploy the backend
+
+services:
+  - type: web
+    name: scan-barcode-api
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_HOST
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false

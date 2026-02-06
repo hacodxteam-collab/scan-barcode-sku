@@ -1,0 +1,9 @@
+@echo off
+echo Installing dependencies...
+cd client
+call npm install
+echo Starting Development Server...
+echo Opening Browser...
+start http://localhost:5173
+npm run dev
+pause

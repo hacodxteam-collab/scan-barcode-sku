@@ -1,0 +1,115 @@
+.login-screen {
+    justify-content: center;
+    align-items: center;
+    /* Background removed to show body pattern */
+}
+
+.login-card {
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    padding: 2rem;
+    border-top: 4px solid var(--color-accent);
+}
+
+.brand-logo {
+    margin-bottom: 2rem;
+}
+
+.logo-icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-accent);
+    color: white;
+    margin: 0 auto;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2);
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+}
+
+.subtitle {
+    margin-top: 0.5rem;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.pin-display {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.pin-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    transition: all 0.2s;
+}
+
+.pin-dot.filled {
+    background-color: var(--color-accent);
+    transform: scale(1.2);
+}
+
+.hidden-pin-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.key-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #e2e8f0;
+    background-color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+}
+
+.key-btn:active {
+    background-color: #f1f5f9;
+    transform: scale(0.95);
+}
+
+.key-btn.submit-btn {
+    background-color: var(--color-text-secondary);
+    color: white;
+    border: none;
+}
+
+.key-btn.submit-btn.active {
+    background-color: var(--color-accent);
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.error-text {
+    color: var(--color-error);
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
